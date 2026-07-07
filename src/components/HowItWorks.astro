@@ -1,0 +1,226 @@
+---
+// How We Work — 3-step process for D2C agency
+const steps = [
+  {
+    num: "01",
+    title: "Free 5-minute ad account audit.",
+    body: "We audit your Meta and Google accounts, identify the 3 biggest bottlenecks, and give you specific, actionable fixes — not generic advice. No pitch deck, no fluff.",
+    code: `// What we review in your audit:
+{
+  "creative_fatigue":  "Hook rate < 3%? Flagged.",
+  "audience_overlap":  "Ad sets cannibalizing? Fixed.",
+  "attribution_gaps":  "CAPI setup missing? Configured.",
+  "rto_risk_score":    "COD flow gaps identified.",
+  "mer_baseline":      "Current MER calculated."
+}`,
+    color: "#007cf0",
+    tag: "Day 0 — Free",
+  },
+  {
+    num: "02",
+    title: "90-day profit engineering sprint.",
+    body: "We rebuild your creative pipeline, configure server-side tracking, set up WhatsApp COD confirmation flows, and begin weekly creative testing cycles. You see data-backed results within 3 weeks.",
+    code: `// Week 1–4: Foundation
+- Server-side pixel + CAPI live
+- MER dashboard configured
+- WhatsApp COD flow deployed
+- 3 new creative hooks launched
+
+// Week 5–12: Scale
+- Creative testing velocity: 5x/week  
+- CAC trending down 15–43%
+- RTO reduction: -28% avg.`,
+    color: "#7928ca",
+    tag: "Days 1–90",
+  },
+  {
+    num: "03",
+    title: "Omnichannel scaling — locked in.",
+    body: "Once CAC is stable and attribution is clean, we expand to Google Shopping, YouTube, and WhatsApp retargeting. Every channel added only when MER supports it — no vanity scaling.",
+    code: `// Scale criteria (our rule):
+if (MER >= 3.0 && CAC_trending === "down") {
+  expand("google_shopping");
+  expand("youtube_awareness");
+  expand("whatsapp_retargeting");
+} else {
+  optimize_existing_channels();
+  // We don't scale losers.
+}`,
+    color: "#50e3c2",
+    tag: "Month 3+",
+  },
+];
+
+const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+---
+
+<section id="how-it-works" class="bg-[#171717] py-24 border-t border-[#2a2a2a]">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="text-[11px] font-mono uppercase tracking-[0.12em] text-[#888] mb-4 block">How we work</span>
+      <h2 class="text-[32px] font-semibold text-white tracking-[-1.28px] leading-[40px] mb-4">
+        Precision. Not promises.
+      </h2>
+      <p class="text-[18px] text-[#888] max-w-xl mx-auto leading-[28px]">
+        Three phases designed to turn your ad account from a cost center into a compounding revenue engine.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="space-y-4">
+      {steps.map((step, i) => (
+        <div 
+          class="step-card flex flex-col lg:flex-row gap-0 bg-[#1a1a1a] rounded-xl overflow-hidden border border-[#333]"
+          style="box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);"
+          data-index={i}
+        >
+          <!-- Left: content -->
+          <div class="flex-1 p-8">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="text-[11px] font-mono font-medium px-2.5 py-1 rounded-md" style={`color: ${step.color}; background: ${step.color}18;`}>
+                {step.num}
+              </div>
+              <div class="h-px flex-1 bg-[#2a2a2a]"></div>
+              <div class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#888]">{step.tag}</div>
+            </div>
+            <h3 class="text-[22px] font-semibold text-white tracking-[-0.96px] leading-[30px] mb-3">
+              {step.title}
+            </h3>
+            <p class="text-[15px] text-[#888] leading-[24px]">
+              {step.body}
+            </p>
+          </div>
+
+          <!-- Right: code block -->
+          <div class="lg:w-[420px] flex-shrink-0 border-t lg:border-t-0 lg:border-l border-[#2a2a2a]">
+            <div class="h-full bg-[#0d0d0d] p-5 font-mono text-[12px] leading-[20px]">
+              <div class="flex items-center gap-2 mb-4 pb-3 border-b border-[#1e1e1e]">
+                <div class="w-2 h-2 rounded-full bg-[#ee0000] opacity-60"></div>
+                <div class="w-2 h-2 rounded-full bg-[#f5a623] opacity-60"></div>
+                <div class="w-2 h-2 rounded-full rounded-full opacity-80" style={`background: ${step.color};`}></div>
+                <span class="text-[11px] text-[#444] ml-1">unitscalers_playbook.js</span>
+              </div>
+              <pre class="text-[#a8a8a8] whitespace-pre-wrap overflow-x-auto" style="font-family: 'JetBrains Mono', monospace;">{step.code}</pre>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Audit CTA -->
+    <div id="audit" class="mt-12 bg-[#0d0d0d] rounded-xl border border-[#333] p-10 text-center" style="box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);">
+      <span class="text-[11px] font-mono uppercase tracking-wider text-[#888] mb-3 block">Limited spots available</span>
+      <h3 class="text-[28px] font-semibold text-white tracking-[-1px] leading-[36px] mb-4">
+        Get your free 5-minute ad account audit.
+      </h3>
+      <p class="text-[16px] text-[#888] max-w-lg mx-auto leading-[26px] mb-8">
+        No generic advice. Just 3 immediate bottleneck fixes for your Shopify store — specific to your account, your numbers, your market.
+      </p>
+
+      <!-- Success banner (hidden by default) -->
+      <div id="audit-success" class="hidden mb-6 flex items-center justify-center gap-3 bg-[#50e3c2]/10 border border-[#50e3c2]/30 rounded-xl px-6 py-4 max-w-lg mx-auto">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#50e3c2" fill-opacity="0.2"/><path d="M6 10l3 3 5-5" stroke="#50e3c2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="text-[14px] text-[#50e3c2] font-medium">Audit request sent! We'll be in touch within 24 hours.</span>
+      </div>
+
+      <!-- Error banner (hidden by default) -->
+      <div id="audit-error" class="hidden mb-6 flex items-center justify-center gap-3 bg-[#ee0000]/10 border border-[#ee0000]/30 rounded-xl px-6 py-4 max-w-lg mx-auto">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#ee0000" fill-opacity="0.2"/><path d="M10 6v5M10 13v1" stroke="#ee0000" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="text-[14px] text-[#ee0000] font-medium">Something went wrong. Please email us at <a href="mailto:hello@unitscalers.com" class="underline">hello@unitscalers.com</a></span>
+      </div>
+
+      <form id="audit-form" class="max-w-lg mx-auto">
+        <!-- Web3Forms hidden fields -->
+        <input type="hidden" name="access_key" value={web3FormsKey} />
+        <input type="hidden" name="subject" value="New Audit Request -- UnitScalers India" />
+        <input type="hidden" name="from_name" value="UnitScalers Website" />
+        <input type="hidden" name="redirect" value="false" />
+        <!-- Honeypot spam filter -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <input
+            id="audit-email"
+            name="email"
+            type="email"
+            required
+            placeholder="your@store.com"
+            class="flex-1 w-full h-12 px-4 rounded-full bg-[#1a1a1a] border border-[#333] text-white text-[14px] placeholder:text-[#555] focus:outline-none focus:border-[#50e3c2] transition-colors"
+          />
+          <button
+            id="audit-submit-btn"
+            type="submit"
+            class="flex-shrink-0 h-12 px-6 rounded-full bg-white text-[#171717] text-[15px] font-medium hover:bg-[#f0f0f0] transition-all duration-200 hover:scale-[1.02] whitespace-nowrap flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+          >
+            <span id="audit-btn-text">Claim Free Audit</span>
+            <svg id="audit-spinner" class="hidden animate-spin" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#888" stroke-width="2" stroke-dasharray="28" stroke-dashoffset="10"/></svg>
+          </button>
+        </div>
+      </form>
+      <p class="text-[12px] text-[#555] mt-4 font-mono">Responding within 24 hours · Free, no commitment</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const stepCards = document.querySelectorAll('.step-card');
+  const stepObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const idx = parseInt(el.dataset.index || '0');
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateX(0)'; }, idx * 150);
+        stepObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.1 });
+  stepCards.forEach(c => {
+    (c as HTMLElement).style.opacity = '0';
+    (c as HTMLElement).style.transform = 'translateX(-20px)';
+    (c as HTMLElement).style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    stepObs.observe(c);
+  });
+
+  // ── Audit form — Web3Forms submission ────────────────────────────────────
+  const auditForm = document.getElementById('audit-form') as HTMLFormElement | null;
+  auditForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn     = document.getElementById('audit-submit-btn') as HTMLButtonElement;
+    const btnText = document.getElementById('audit-btn-text')!;
+    const spinner = document.getElementById('audit-spinner')!;
+    const success = document.getElementById('audit-success')!;
+    const error   = document.getElementById('audit-error')!;
+
+    // Loading state
+    btn.disabled = true;
+    btnText.textContent = 'Sending...';
+    spinner.classList.remove('hidden');
+    success.classList.add('hidden');
+    error.classList.add('hidden');
+
+    try {
+      const formData = new FormData(auditForm);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        success.classList.remove('hidden');
+        auditForm.reset();
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      error.classList.remove('hidden');
+      console.error('Audit form error:', err);
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = 'Claim Free Audit';
+      spinner.classList.add('hidden');
+    }
+  });
+</script>

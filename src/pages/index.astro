@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Metrics from '../components/Metrics.astro';
+import Features from '../components/Features.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import FAQ from '../components/Categories.astro';
+import Pricing from '../components/Pricing.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="UnitScalers — Stop Chasing GMV. Start Engineering Net Profit."
+  description="The premier performance marketing agency for Indian D2C brands scaling ₹5L to ₹50L/month. We reduce CAC, minimize RTO, and optimize your unit economics for real bottom-line cash flow."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <Metrics />
+    <Features />
+    <HowItWorks />
+    <FAQ />
+    <Pricing />
+    <Footer />
+  </main>
 </Layout>

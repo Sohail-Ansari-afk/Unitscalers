@@ -1,0 +1,193 @@
+---
+// Solution Pillars — 3 core service areas
+const pillars = [
+  {
+    num: "01",
+    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L25 22H3L14 3Z" stroke="#007cf0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 10v6M14 19v1" stroke="#007cf0" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    badge: "Creative",
+    title: "High-velocity creative frameworks.",
+    body: "Creative fatigue is the primary driver of rising acquisition costs. We implement a rigorous meta ad creative testing framework — designing, isolating variables, and launching 3–5 highly localized creative hooks every week to keep your CPMs low.",
+    details: [
+      "3–5 new creative concepts per week",
+      "Localized hooks for Tier 1, 2 & 3 cities",
+      "Hook rate + scroll-stop analysis",
+      "Weekly creative autopsy reports",
+    ],
+    accentColor: "#007cf0",
+    gradient: "linear-gradient(135deg, #007cf0, #00dfd8)",
+  },
+  {
+    num: "02",
+    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" stroke="#7928ca" stroke-width="1.5"/><path d="M8 14h12M14 8v12" stroke="#7928ca" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    badge: "Distribution",
+    title: "Omnichannel demand engineering.",
+    body: "Relying solely on Facebook traffic leaves your business vulnerable to algorithm shifts. Our unified scaling framework captures consumer intent across the entire Indian digital landscape.",
+    details: [
+      "Meta Ads — Instagram & Facebook",
+      "Google Search & Shopping",
+      "YouTube for consideration stage",
+      "WhatsApp retargeting & COD confirmation",
+    ],
+    accentColor: "#7928ca",
+    gradient: "linear-gradient(135deg, #7928ca, #ff0080)",
+  },
+  {
+    num: "03",
+    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="3" stroke="#ff0080" stroke-width="1.5"/><path d="M8 18l4-6 4 4 4-8" stroke="#ff0080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    badge: "Attribution",
+    title: "Bulletproof first-party data attribution.",
+    body: "Standard platform attribution windows are broken due to modern privacy protocols. We bypass inaccurate third-party tracking with server-side pipelines, giving you a custom MER calculator to map unit economics in real time.",
+    details: [
+      "Server-side pixel + CAPI setup",
+      "Custom MER dashboard (Revenue ÷ Total Spend)",
+      "Cross-channel attribution modeling",
+      "Weekly P&L alignment reports",
+    ],
+    accentColor: "#ff0080",
+    gradient: "linear-gradient(135deg, #ff0080, #f9cb28)",
+  },
+];
+---
+
+<section id="solution" class="bg-white py-24 border-t border-[#ebebeb]">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="text-[11px] font-mono uppercase tracking-[0.12em] text-[#888] mb-4 block">Core Solutions</span>
+      <h2 class="text-[32px] font-semibold text-[#171717] tracking-[-1.28px] leading-[40px] mb-4">
+        Engineered to reduce CAC and eliminate wasteful ad spend.
+      </h2>
+      <p class="text-[18px] text-[#4d4d4d] max-w-xl mx-auto leading-[28px]">
+        Three interconnected systems that attack your biggest profit leaks simultaneously.
+      </p>
+    </div>
+
+    <!-- Pillars -->
+    <div class="space-y-4">
+      {pillars.map((pillar, i) => (
+        <div 
+          class="pillar-card bg-[#fafafa] rounded-xl border border-[#ebebeb] overflow-hidden hover:border-[#a1a1a1] transition-all duration-200 group"
+          data-index={i}
+          style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);"
+        >
+          <div class="flex flex-col lg:flex-row">
+            <!-- Left: content -->
+            <div class="flex-1 p-8">
+              <div class="flex items-start gap-4 mb-5">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={`background: ${pillar.accentColor}12;`}>
+                  <Fragment set:html={pillar.icon} />
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[11px] font-mono text-[#888] bg-white border border-[#ebebeb] rounded-full px-2 py-0.5">{pillar.badge}</span>
+                    <span class="text-[13px] font-mono text-[#888]">{pillar.num}</span>
+                  </div>
+                  <h3 class="text-[22px] font-semibold text-[#171717] tracking-[-0.96px] leading-[30px]">{pillar.title}</h3>
+                </div>
+              </div>
+              <p class="text-[15px] text-[#4d4d4d] leading-[24px] mb-6 max-w-xl">{pillar.body}</p>
+
+              <!-- Detail list -->
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {pillar.details.map(detail => (
+                  <li class="flex items-start gap-2.5 text-[13px] text-[#4d4d4d]">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="flex-shrink-0 mt-0.5">
+                      <circle cx="7" cy="7" r="6" fill={pillar.accentColor} fill-opacity="0.12"/>
+                      <path d="M4.5 7l2 2 3-3" stroke={pillar.accentColor} stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Right: visual bar -->
+            <div class="lg:w-8 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={`background: ${pillar.gradient};`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- MER Infographic -->
+    <div class="mt-8 bg-[#171717] rounded-xl p-8 text-white" style="box-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 8px 32px rgba(0,0,0,0.08);">
+      <div class="flex flex-col lg:flex-row gap-10 items-center">
+        <div class="lg:w-72">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-[#888] mb-2 block">Our Core KPI</span>
+          <h3 class="text-[22px] font-semibold text-white tracking-[-0.96px] leading-[30px] mb-3">
+            We track MER, not platform ROAS.
+          </h3>
+          <p class="text-[14px] text-[#888] leading-[22px]">
+            Marketing Efficiency Ratio = Total Revenue ÷ Total Ad Spend (all channels). The only metric that maps to real bank deposits.
+          </p>
+        </div>
+
+        <!-- MER Gauge visual -->
+        <div class="flex-1 flex flex-col sm:flex-row items-center gap-8">
+          <!-- Visual comparison -->
+          <div class="flex-1 space-y-4">
+            <div>
+              <div class="flex justify-between mb-1.5 text-[12px]">
+                <span class="text-[#888]">Typical agency metric: Platform ROAS</span>
+                <span class="text-[#ee0000] font-mono">Misleading</span>
+              </div>
+              <div class="h-3 bg-[#2a2a2a] rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-[#ee0000] opacity-60" style="width: 85%; transition: width 1.5s ease;"></div>
+              </div>
+              <p class="text-[11px] text-[#555] mt-1">Inflated by attribution overlap — often 2× actual performance</p>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1.5 text-[12px]">
+                <span class="text-[#888]">Our metric: True MER</span>
+                <span class="font-mono" style="color: #50e3c2;">3.8× avg.</span>
+              </div>
+              <div class="h-3 bg-[#2a2a2a] rounded-full overflow-hidden">
+                <div class="h-full rounded-full mer-bar" style="width: 0%; background: linear-gradient(90deg, #007cf0, #50e3c2); transition: width 1.5s ease;"></div>
+              </div>
+              <p class="text-[11px] text-[#555] mt-1">Every rupee in ÷ every rupee of revenue out — all channels</p>
+            </div>
+          </div>
+
+          <!-- Formula card -->
+          <div class="bg-[#1a1a1a] border border-[#333] rounded-xl p-5 font-mono text-center min-w-[180px]" style="box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);">
+            <div class="text-[11px] text-[#555] uppercase tracking-wider mb-3">MER Formula</div>
+            <div class="text-[15px] text-white mb-1">Total Revenue</div>
+            <div class="h-px bg-[#444] my-2"></div>
+            <div class="text-[15px] text-white mb-3">Total Ad Spend</div>
+            <div class="text-[24px] font-semibold" style="color: #50e3c2;">= 3.8×</div>
+            <div class="text-[11px] text-[#555] mt-1">avg. across portfolio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const pillarCards = document.querySelectorAll('.pillar-card');
+  const pillarObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const idx = parseInt(el.dataset.index || '0');
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, idx * 120);
+        pillarObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.1 });
+  pillarCards.forEach(c => {
+    (c as HTMLElement).style.opacity = '0';
+    (c as HTMLElement).style.transform = 'translateY(20px)';
+    (c as HTMLElement).style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    pillarObs.observe(c);
+  });
+
+  // Animate MER bar
+  const merBar = document.querySelector('.mer-bar') as HTMLElement;
+  const merObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && merBar) {
+      setTimeout(() => { merBar.style.width = '76%'; }, 300);
+      merObs.disconnect();
+    }
+  }, { threshold: 0.4 });
+  if (merBar) merObs.observe(merBar);
+</script>

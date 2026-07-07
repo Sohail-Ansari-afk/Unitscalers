@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# VS Code & IDE settings
+.vscode/
+.mcp.json
+
+# Cloudflare Wrangler cache
+.wrangler/

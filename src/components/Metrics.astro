@@ -1,0 +1,159 @@
+---
+// Market Shift section + Results infographics
+---
+
+<!-- Market Context Band -->
+<section id="results" class="bg-[#fafafa] border-t border-[#ebebeb] py-24">
+  <div class="max-w-[1200px] mx-auto px-6">
+
+    <!-- Section eyebrow + header -->
+    <div class="max-w-3xl mb-16">
+      <span class="text-[11px] font-mono uppercase tracking-[0.12em] text-[#888] mb-4 block">The 2026 Indian D2C Reality</span>
+      <h2 class="text-[32px] font-semibold text-[#171717] tracking-[-1.28px] leading-[40px] mb-6">
+        Moving beyond cheap clicks to real contribution margins.
+      </h2>
+      <p class="text-[17px] text-[#4d4d4d] leading-[28px] mb-4">
+        Most traditional agencies in India focus entirely on Gross Merchandise Value (GMV) and inflated ROAS inside the Meta dashboard. But if your top-line revenue is growing while your bank account stays flat — your brand is suffering from deep operational leaks.
+      </p>
+      <p class="text-[17px] text-[#4d4d4d] leading-[28px]">
+        We are not a standard ad-buying service. We act as your dedicated <strong class="text-[#171717] font-medium">fractional growth marketer</strong>, aligning every rupee of ad spend directly with your P&L.
+      </p>
+    </div>
+
+    <!-- Infographic: The GMV vs Profit Gap -->
+    <div class="bg-white rounded-xl border border-[#ebebeb] p-8 mb-6" style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-72 flex-shrink-0">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-[#888] mb-3 block">The gap they hide</span>
+          <h3 class="text-[22px] font-semibold text-[#171717] tracking-[-0.96px] leading-[30px] mb-4">GMV vs. Net Profit — the metric most agencies hide from you.</h3>
+          <p class="text-[14px] text-[#4d4d4d] leading-[22px]">
+            Typical Indian D2C brands scaling on paid ads see top-line GMV grow 3× while net bank deposits barely move. Here's why:
+          </p>
+        </div>
+        <div class="flex-1 space-y-4">
+          {[
+            { label: "Gross Revenue (GMV)", value: 100, color: "#007cf0", prefix: "₹", suffix: "L" },
+            { label: "Ad Spend (Meta + Google)", value: 35, color: "#ee0000", prefix: "₹", suffix: "L" },
+            { label: "RTO + COD Losses (Avg. 22%)", value: 22, color: "#f5a623", prefix: "₹", suffix: "L" },
+            { label: "Logistics + COGS", value: 25, color: "#7928ca", prefix: "₹", suffix: "L" },
+            { label: "Net Contribution Margin", value: 18, color: "#50e3c2", prefix: "₹", suffix: "L" },
+          ].map((row, i) => (
+            <div class="metric-bar-row" data-index={i}>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[13px] font-medium text-[#171717]">{row.label}</span>
+                <span class="text-[13px] font-mono text-[#4d4d4d]">{row.prefix}{row.value}{row.suffix}</span>
+              </div>
+              <div class="h-2.5 bg-[#f5f5f5] rounded-full overflow-hidden">
+                <div 
+                  class="h-full rounded-full progress-bar"
+                  style={`background: ${row.color}; --target-width: ${row.value}%; width: 0%;`}
+                ></div>
+              </div>
+            </div>
+          ))}
+          <p class="text-[12px] text-[#888] font-mono mt-2">* Based on aggregated data from 40+ Indian D2C brands, ₹100L GMV scenario</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infographic: The 3 Leaks -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      {[
+        {
+          icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#ee0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+          color: "#ee0000",
+          num: "Leak #1",
+          title: "High CAC from creative fatigue",
+          body: "Running the same 2–3 ad creatives burns audience recall. CPMs spike 40–60% after 3 weeks. Most brands don't even notice until ROAS collapses.",
+          stat: "↑ 52% avg. CPM increase in week 4",
+        },
+        {
+          icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#f5a623" stroke-width="1.5"/><path d="M16 11h2M6 11h.01" stroke="#f5a623" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+          color: "#f5a623",
+          num: "Leak #2",
+          title: "COD fraud & high RTO rates",
+          body: "Indian D2C brands lose 18–30% of shipped COD orders to RTO. Without WhatsApp confirmation flows, you're shipping blindly and eating the reverse logistics cost.",
+          stat: "₹4,500 avg. loss per RTO order",
+        },
+        {
+          icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#7928ca" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#7928ca" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+          color: "#7928ca",
+          num: "Leak #3",
+          title: "Broken attribution = wasted spend",
+          body: "iOS privacy updates broke Meta's pixel. Brands relying on platform-reported ROAS are making budget decisions on 40% incomplete data — scaling losers, killing winners.",
+          stat: "~40% of conversions go untracked",
+        },
+      ].map((leak, i) => (
+        <div class="leak-card bg-white rounded-lg p-6 card-elevation-2 group hover:-translate-y-0.5 transition-all duration-200" data-index={i}>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style={`background: ${leak.color}15`}>
+              <Fragment set:html={leak.icon} />
+            </div>
+            <span class="text-[11px] font-mono text-[#888] bg-[#fafafa] border border-[#ebebeb] rounded-full px-2 py-0.5">{leak.num}</span>
+          </div>
+          <h3 class="text-[17px] font-semibold text-[#171717] tracking-[-0.4px] leading-[24px] mb-2">{leak.title}</h3>
+          <p class="text-[13px] text-[#4d4d4d] leading-[20px] mb-4">{leak.body}</p>
+          <div class="flex items-center gap-2 text-[12px] font-mono" style={`color: ${leak.color}`}>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {leak.stat}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Key metrics bar -->
+    <div class="bg-[#171717] rounded-xl p-8 text-white" style="box-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08);">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="md:w-72">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-[#888] mb-2 block">What we fix</span>
+          <h3 class="text-[22px] font-semibold text-white tracking-[-0.96px] leading-[30px]">Average results across client portfolio in 90 days.</h3>
+        </div>
+        <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { value: "43%", label: "CAC Reduction", color: "#007cf0" },
+            { value: "3.8×", label: "MER Achieved", color: "#50e3c2" },
+            { value: "28%", label: "RTO Decrease", color: "#7928ca" },
+            { value: "5×", label: "Creative Velocity", color: "#f9cb28" },
+          ].map(stat => (
+            <div class="text-center">
+              <div class="text-[36px] font-semibold tracking-[-1.5px] leading-none mb-1" style={`color: ${stat.color}`}>{stat.value}</div>
+              <div class="text-[12px] text-[#888]">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const bars = document.querySelectorAll('.progress-bar');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target as HTMLElement;
+        bar.style.animation = 'progress-fill 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+        observer.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.3 });
+  bars.forEach(bar => observer.observe(bar));
+
+  const leakCards = document.querySelectorAll('.leak-card');
+  const leakObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const idx = parseInt(el.dataset.index || '0');
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, idx * 100);
+        leakObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.1 });
+  leakCards.forEach(c => {
+    (c as HTMLElement).style.opacity = '0';
+    (c as HTMLElement).style.transform = 'translateY(16px)';
+    (c as HTMLElement).style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    leakObs.observe(c);
+  });
+</script>

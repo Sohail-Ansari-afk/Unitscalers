@@ -1,0 +1,206 @@
+---
+// Pricing section — Indian D2C Agency tiers in INR
+const plans = [
+  {
+    name: "Growth Launch",
+    price: "₹25,000",
+    period: "/month",
+    adSpend: "Up to ₹50L managed monthly ad spend",
+    perfFee: "0% performance fee",
+    description: "For D2C brands entering paid acquisition",
+    featured: false,
+    features: [
+      "Full Meta & Google Ads setup",
+      "Server-side attribution (CAPI)",
+      "Bi-weekly performance dashboards",
+      "3 creative asset concepts/week",
+      "WhatsApp COD confirmation flow",
+      "Monthly P&L alignment call",
+    ],
+    cta: "Start Growth Launch",
+    ctaId: "pricing-cta-growth",
+  },
+  {
+    name: "Scale Accelerator",
+    price: "₹50,000",
+    period: "/month",
+    adSpend: "Up to ₹1.5Cr managed monthly",
+    perfFee: "+ 5% of monthly spend",
+    description: "For brands ready to dominate their category",
+    featured: true,
+    badge: "Most popular",
+    features: [
+      "Full omnichannel — Meta, Google, YouTube",
+      "Custom landing page hooks",
+      "Weekly live alignment calls",
+      "5 creative concepts/week",
+      "Advanced MER dashboard",
+      "RTO reduction workflow",
+      "WhatsApp retargeting sequences",
+      "Dedicated account strategist",
+    ],
+    cta: "Start Scale Accelerator",
+    ctaId: "pricing-cta-scale",
+  },
+  {
+    name: "Omni Dominance",
+    price: "Custom",
+    period: "",
+    adSpend: "Enterprise — ₹1.5Cr+/month",
+    perfFee: "Linked to net profit milestones",
+    description: "Full funnel ownership for market leaders",
+    featured: false,
+    features: [
+      "Full funnel ownership",
+      "Advanced first-party data models",
+      "RTO reduction workflow integration",
+      "Dedicated multi-channel team",
+      "Custom unit economics dashboard",
+      "Board-level reporting",
+      "Priority 24/7 support",
+      "Custom SLA & guarantees",
+    ],
+    cta: "Request Custom Quote",
+    ctaId: "pricing-cta-enterprise",
+  },
+];
+---
+
+<section id="pricing" class="bg-[#fafafa] py-24 border-t border-[#ebebeb]">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="text-[11px] font-mono uppercase tracking-[0.12em] text-[#888] mb-4 block">Pricing</span>
+      <h2 class="text-[32px] font-semibold text-[#171717] tracking-[-1.28px] leading-[40px] mb-4">
+        Built for growing Indian brands. Zero hidden charges.
+      </h2>
+      <p class="text-[18px] text-[#4d4d4d] max-w-xl mx-auto leading-[28px]">
+        Our hybrid retainer model aligns our incentives with your net profitable growth.
+      </p>
+    </div>
+
+    <!-- Pricing cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch mb-12">
+      {plans.map((plan, i) => (
+        <div 
+          class={`pricing-card rounded-xl p-8 flex flex-col ${plan.featured ? 'bg-[#171717] text-white' : 'bg-white border border-[#ebebeb]'}`}
+          style={plan.featured 
+            ? 'box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 4px 16px rgba(0,0,0,0.2), 0 16px 48px rgba(0,0,0,0.12);' 
+            : 'box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);'
+          }
+          data-index={i}
+        >
+          <!-- Plan name + badge -->
+          <div class="flex items-center justify-between mb-2">
+            <span class={`text-[14px] font-medium ${plan.featured ? 'text-white' : 'text-[#171717]'}`}>{plan.name}</span>
+            {plan.badge && (
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#007cf0]/20 text-[#007cf0]">{plan.badge}</span>
+            )}
+          </div>
+
+          <!-- Price -->
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class={`text-[44px] font-semibold tracking-[-2px] leading-none ${plan.featured ? 'text-white' : 'text-[#171717]'}`}>{plan.price}</span>
+            {plan.period && <span class={`text-[14px] ${plan.featured ? 'text-[#888]' : 'text-[#888]'}`}>{plan.period}</span>}
+          </div>
+
+          <!-- Ad spend + perf fee tags -->
+          <div class={`text-[12px] font-mono mb-1 ${plan.featured ? 'text-[#50e3c2]' : 'text-[#4d4d4d]'}`}>{plan.adSpend}</div>
+          <div class={`text-[12px] font-mono mb-4 ${plan.featured ? 'text-[#888]' : 'text-[#888]'}`}>{plan.perfFee}</div>
+          <p class={`text-[13px] mb-5 ${plan.featured ? 'text-[#888]' : 'text-[#888]'}`}>{plan.description}</p>
+
+          <!-- Divider -->
+          <div class={`h-px mb-5 ${plan.featured ? 'bg-[#333]' : 'bg-[#ebebeb]'}`}></div>
+
+          <!-- Feature list -->
+          <ul class="space-y-2.5 flex-1 mb-8">
+            {plan.features.map(feat => (
+              <li class="flex items-start gap-2.5">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="flex-shrink-0 mt-0.5">
+                  <circle cx="7.5" cy="7.5" r="6.5" fill={plan.featured ? '#007cf0' : '#f0f0f0'}/>
+                  <path d="M4.5 7.5l2 2 4-4" stroke={plan.featured ? 'white' : '#4d4d4d'} stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class={`text-[13px] ${plan.featured ? 'text-[#d4d4d4]' : 'text-[#4d4d4d]'}`}>{feat}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- CTA -->
+          <a 
+            href="#audit"
+            id={plan.ctaId}
+            class={`h-11 rounded-full text-[14px] font-medium flex items-center justify-center transition-all duration-200 ${
+              plan.featured 
+                ? 'bg-white text-[#171717] hover:bg-[#f0f0f0]' 
+                : 'bg-[#171717] text-white hover:bg-[#333]'
+            }`}
+          >
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Comparison: Retainer vs % of Spend infographic -->
+    <div class="bg-white rounded-xl border border-[#ebebeb] p-8" style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);">
+      <div class="flex flex-col lg:flex-row gap-10 items-center">
+        <div class="lg:w-64">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-[#888] mb-2 block">Pricing model explained</span>
+          <h3 class="text-[20px] font-semibold text-[#171717] tracking-[-0.6px] leading-[28px] mb-3">Retainer + performance. Aligned incentives.</h3>
+          <p class="text-[13px] text-[#4d4d4d] leading-[20px]">Unlike agencies that take a flat % of ad spend regardless of performance, our model rewards real results.</p>
+        </div>
+        <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            {
+              label: "Traditional Agency",
+              items: ["15% of ad spend regardless of results", "Incentive to increase your spend", "No accountability to margins", "ROAS only — no MER tracking"],
+              color: "#ee0000",
+              bad: true,
+            },
+            {
+              label: "UnitScalers Model",
+              items: ["Fixed base + 5% only on Scale plan", "Incentive to improve MER", "P&L-linked reporting", "Full attribution transparency"],
+              color: "#50e3c2",
+              bad: false,
+            }
+          ].map(col => (
+            <div class={`rounded-lg p-5 ${col.bad ? 'bg-[#fff5f5] border border-[#f7d4d6]' : 'bg-[#f0fdf9] border border-[#a7f3d0]'}`}>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full" style={`background: ${col.color};`}></div>
+                <span class="text-[13px] font-medium text-[#171717]">{col.label}</span>
+              </div>
+              <ul class="space-y-2">
+                {col.items.map(item => (
+                  <li class="flex items-start gap-2 text-[12px] text-[#4d4d4d]">
+                    <span class="flex-shrink-0 mt-0.5">{col.bad ? '✗' : '✓'}</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const pricingCards = document.querySelectorAll('.pricing-card');
+  const pricingObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const idx = parseInt(el.dataset.index || '0');
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, idx * 100);
+        pricingObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.1 });
+  pricingCards.forEach(c => {
+    (c as HTMLElement).style.opacity = '0';
+    (c as HTMLElement).style.transform = 'translateY(16px)';
+    (c as HTMLElement).style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    pricingObs.observe(c);
+  });
+</script>

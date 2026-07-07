@@ -1,0 +1,105 @@
+---
+// Hero — "Stop Chasing Empty GMV. Start Engineering Net Profit."
+---
+<section 
+  id="hero"
+  class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white pt-16"
+>
+  <!-- Mesh Gradient Backdrop -->
+  <div 
+    class="absolute inset-0 pointer-events-none"
+    aria-hidden="true"
+    style="
+      background:
+        radial-gradient(ellipse 90% 70% at 50% -5%, rgba(0,124,240,0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 65% 55% at 85% 15%, rgba(121,40,202,0.13) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 45% at 15% 25%, rgba(0,223,216,0.11) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 60% at 60% 80%, rgba(255,0,128,0.07) 0%, transparent 55%);
+      animation: mesh-drift 14s ease-in-out infinite;
+    "
+  ></div>
+
+  <!-- Subtle dot grid -->
+  <div 
+    class="absolute inset-0 pointer-events-none"
+    aria-hidden="true"
+    style="background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px); background-size: 32px 32px; opacity: 0.35;"
+  ></div>
+
+  <div class="relative z-10 max-w-[1100px] mx-auto px-6 py-20 text-center">
+
+    <!-- Announcement badge -->
+    <a 
+      href="#audit"
+      class="inline-flex items-center gap-2 bg-[#fafafa] border border-[#ebebeb] rounded-full px-4 py-1.5 mb-8 text-[13px] text-[#4d4d4d] hover:border-[#a1a1a1] transition-colors"
+      style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);"
+    >
+      <span class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-[#50e3c2] flex-shrink-0" style="animation: pulse-ring 2s ease-in-out infinite;"></span>
+        <span class="text-[11px] font-mono uppercase tracking-wider text-[#888]">Free offer</span>
+      </span>
+      <span class="text-[#4d4d4d]">Claim your 5-minute Ad Account Audit — 3 bottleneck fixes, free.</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="#888" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+    <!-- Main Headline -->
+    <h1 class="text-[52px] md:text-[64px] lg:text-[76px] font-semibold text-[#171717] leading-[1.0] tracking-[-3px] mb-6 max-w-4xl mx-auto">
+      Stop chasing empty GMV.<br/>
+      <span style="background: linear-gradient(90deg, #007cf0 0%, #00dfd8 30%, #7928ca 65%, #ff0080 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        Start engineering net profit.
+      </span>
+    </h1>
+
+    <!-- Sub-headline -->
+    <p class="text-[18px] md:text-[20px] text-[#4d4d4d] leading-[30px] max-w-2xl mx-auto mb-10">
+      We are a specialized performance marketing agency for Indian D2C brands scaling from <strong class="text-[#171717] font-medium">₹5 Lakhs to ₹50 Lakhs</strong> in monthly revenue — eliminating vanity metrics and optimizing real bottom-line cash flow.
+    </p>
+
+    <!-- CTA Row -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-20">
+      <a 
+        href="#audit"
+        id="hero-cta-audit"
+        class="h-12 px-8 rounded-full bg-[#171717] text-white text-[16px] font-medium flex items-center gap-2 hover:bg-[#333] transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-black/10"
+      >
+        Claim Free 5-Min Audit
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a 
+        href="#solution"
+        id="hero-cta-learn"
+        class="h-12 px-8 rounded-full bg-white text-[#171717] text-[16px] font-medium flex items-center gap-2 border border-[#ebebeb] hover:bg-[#fafafa] transition-all duration-200"
+        style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);"
+      >
+        See How We Work
+      </a>
+    </div>
+
+    <!-- Proof metrics strip -->
+    <div class="flex flex-wrap items-center justify-center gap-px bg-[#ebebeb] rounded-2xl overflow-hidden border border-[#ebebeb]" style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);">
+      {[
+        { value: "₹50L+", label: "Avg. monthly revenue scaled", color: "#007cf0" },
+        { value: "43%", label: "Avg. CAC reduction in 90 days", color: "#7928ca" },
+        { value: "3.8×", label: "Avg. MER across client portfolio", color: "#ff0080" },
+        { value: "28%", label: "RTO rate reduction guaranteed", color: "#00dfd8" },
+      ].map((m, i) => (
+        <div class="flex-1 min-w-[140px] bg-white px-6 py-5 text-center" key={i}>
+          <div class="text-[28px] font-semibold text-[#171717] tracking-[-1px] leading-none mb-1" style={`color: ${m.color}`}>{m.value}</div>
+          <div class="text-[12px] text-[#888] leading-[16px]">{m.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-[12px] text-[#888] mt-4 font-mono">No generic advice. Audited results across 40+ Indian D2C brands.</p>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a 
+    href="#solution"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-[#888] animate-bounce"
+    aria-label="Scroll down"
+  >
+    <span class="text-[11px] font-mono uppercase tracking-wider">Scroll</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>

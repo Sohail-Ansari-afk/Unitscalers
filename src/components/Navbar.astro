@@ -1,0 +1,67 @@
+---
+// Navbar component — UnitScalers Performance Marketing Agency
+---
+<header 
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#ebebeb]"
+  style="height: 64px;"
+>
+  <div class="max-w-[1400px] mx-auto px-6 h-full flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" id="nav-logo" class="flex items-center gap-2.5 font-semibold text-[#171717] text-[15px] tracking-tight no-underline">
+      <div class="w-7 h-7 rounded-md flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #007cf0 0%, #00dfd8 40%, #7928ca 70%, #ff0080 100%);">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 1.5L12.5 12H1.5L7 1.5Z" fill="white"/>
+        </svg>
+      </div>
+      <span>UnitScalers</span>
+    </a>
+
+    <!-- Nav Links (desktop) -->
+    <nav class="hidden md:flex items-center gap-1" aria-label="Main navigation">
+      <a href="#solution" id="nav-solution" class="text-[14px] text-[#4d4d4d] px-3 py-2 rounded-full hover:bg-[#fafafa] hover:text-[#171717] transition-colors duration-150">Solutions</a>
+      <a href="#results" id="nav-results" class="text-[14px] text-[#4d4d4d] px-3 py-2 rounded-full hover:bg-[#fafafa] hover:text-[#171717] transition-colors duration-150">Results</a>
+      <a href="#pricing" id="nav-pricing" class="text-[14px] text-[#4d4d4d] px-3 py-2 rounded-full hover:bg-[#fafafa] hover:text-[#171717] transition-colors duration-150">Pricing</a>
+      <a href="#faq" id="nav-faq" class="text-[14px] text-[#4d4d4d] px-3 py-2 rounded-full hover:bg-[#fafafa] hover:text-[#171717] transition-colors duration-150">FAQ</a>
+    </nav>
+
+    <!-- CTA cluster -->
+    <div class="flex items-center gap-2">
+      <a href="#audit" id="nav-audit" class="hidden sm:flex h-7 px-3 items-center text-[13px] font-medium text-[#171717] rounded-[6px] bg-white border border-[#ebebeb] hover:bg-[#fafafa] transition-colors whitespace-nowrap">Free Audit</a>
+      <a href="#contact" id="nav-contact" class="flex h-7 px-3 items-center text-[13px] font-medium text-white rounded-[6px] bg-[#171717] hover:bg-[#333] transition-colors whitespace-nowrap">Get Started</a>
+      <!-- Mobile hamburger -->
+      <button id="nav-mobile-toggle" class="md:hidden p-2 rounded-md text-[#4d4d4d] hover:bg-[#fafafa]" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-[#ebebeb] px-6 py-4 space-y-1">
+    <a href="#solution" class="block text-[14px] text-[#4d4d4d] py-2 hover:text-[#171717]">Solutions</a>
+    <a href="#results" class="block text-[14px] text-[#4d4d4d] py-2 hover:text-[#171717]">Results</a>
+    <a href="#pricing" class="block text-[14px] text-[#4d4d4d] py-2 hover:text-[#171717]">Pricing</a>
+    <a href="#faq" class="block text-[14px] text-[#4d4d4d] py-2 hover:text-[#171717]">FAQ</a>
+    <a href="#audit" class="block mt-2 h-10 px-4 rounded-full bg-[#171717] text-white text-[14px] font-medium flex items-center justify-center">Claim Free Audit →</a>
+  </div>
+</header>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const mobileToggle = document.getElementById('nav-mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add('shadow-sm');
+    } else {
+      navbar?.classList.remove('shadow-sm');
+    }
+  });
+
+  mobileToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
