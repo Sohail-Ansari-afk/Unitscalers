@@ -18,6 +18,9 @@
     "wrangler": "^4.107.0"
   },
   "devDependencies": {
+    "@emnapi/core": "^1.11.2",
+    "@emnapi/runtime": "^1.11.2",
+    "@napi-rs/wasm-runtime": "^1.1.6",
     "@tailwindcss/vite": "^4.3.2",
     "tailwindcss": "^4.3.2"
   }
