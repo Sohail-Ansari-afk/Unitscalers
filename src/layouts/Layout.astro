@@ -3,10 +3,12 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  schema?: string;
 }
 const { 
-  title = "UnitScalers — Stop Chasing GMV. Start Engineering Net Profit.",
-  description = "The premier performance marketing agency for Indian D2C brands. We reduce CAC, minimize RTO, and align every rupee of ad spend with your P&L."
+  title = "UnitScalers — LinkedIn Growth, Run Like Performance Marketing",
+  description = "UnitScalers builds and manages LinkedIn presence for founders and entrepreneurs — content, carousels, and outreach — tracked with the same attribution discipline as a paid ad account.",
+  schema
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, 'https://unitscalers.com').href;
@@ -30,34 +32,33 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://unitscalers.com').href
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="en_US" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <!-- JSON-LD Schema -->
+    <!-- Primary JSON-LD Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "UnitScalers",
-        "description": "The premier performance marketing agency for D2C brands in India. We specialize in reducing customer acquisition costs, optimizing contribution margins, and driving profitable growth for Shopify stores.",
+        "description": "A LinkedIn management agency for founders and entrepreneurs, combining content, carousel design, and outreach with performance-marketing-style attribution reporting.",
         "url": "https://unitscalers.com",
-        "priceRange": "\u20B9\u20B9\u20B9",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN",
-          "addressRegion": "Maharashtra"
-        },
+        "areaServed": "Global",
         "knowsAbout": [
-          "Performance Marketing India",
-          "D2C Brand Scaling",
-          "Customer Acquisition Cost Optimization",
-          "RTO Cost Reduction",
-          "Shopify Media Buying"
+          "LinkedIn Content Strategy",
+          "Personal Branding for Founders",
+          "LinkedIn Carousel Design",
+          "B2B Lead Generation",
+          "LinkedIn Outreach Systems",
+          "Performance Marketing Attribution"
         ]
       }
     </script>
+    <!-- Additional schema (FAQPage etc.) passed via prop -->
+    {schema && <script type="application/ld+json" set:html={schema} />}
   </head>
   <body>
     <slot />
