@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout 
+  title="404: Page Not Found | Unitscalers"
+  description="The page you are looking for does not exist."
+>
+  <section class="min-h-[60vh] flex items-center justify-center border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 md:px-12 text-center py-24">
+      <div class="font-mono text-xs md:text-sm uppercase tracking-widest text-brand-green mb-4">Error 404</div>
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-brand-dark dark:text-white">Page Not Found</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">
+        We couldn't find the page you were looking for. It might have been moved, or it simply doesn't exist.
+      </p>
+      <Button href="/">Return to Home</Button>
+    </div>
+  </section>
+</Layout>
