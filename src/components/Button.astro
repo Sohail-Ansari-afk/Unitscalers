@@ -1,0 +1,29 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  class?: string;
+}
+
+const { href, variant = 'primary', class: className = '' } = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center px-6 py-3 font-mono text-sm uppercase tracking-widest transition-colors duration-200 cursor-pointer";
+
+const variants = {
+  primary: "bg-brand-dark text-white hover:bg-gray-800 dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300",
+  secondary: "bg-brand-green text-brand-dark hover:bg-[#bce0d6] dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700",
+  outline: "border border-gray-300 text-brand-dark hover:border-brand-dark dark:border-gray-700 dark:text-gray-200 dark:hover:border-gray-400"
+};
+
+const combinedClasses = `${baseStyles} ${variants[variant]} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={combinedClasses}>
+    <slot />
+  </a>
+) : (
+  <button class={combinedClasses}>
+    <slot />
+  </button>
+)}

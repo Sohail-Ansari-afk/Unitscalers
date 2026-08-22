@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout 
+  title="Contact Unitscalers | Skincare & Wellness Marketing Agency"
+  description="Get in touch with Unitscalers for a free audit — whether you run a D2C skincare brand or a local skincare clinic, store, or spa."
+>
+  <section class="border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+      <div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-tight text-brand-dark dark:text-white">
+          Let's Talk About Growing Your Skincare or Wellness Business
+        </h1>
+        <p class="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8">
+          Tell us a little about your business and we'll get back to you with next steps. Whether you're a D2C brand or a local clinic/store/spa, we'll point you to the right audit.
+        </p>
+        
+        <div class="space-y-6 mt-8 md:mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">Email</div>
+            <a href="mailto:officia@unitscalers.con" class="text-brand-dark dark:text-brand-green font-medium hover:underline text-base md:text-lg">officia@unitscalers.con</a>
+          </div>
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">Instagram</div>
+            <a href="https://instagram.com/unitscalers" target="_blank" rel="noopener noreferrer" class="text-brand-dark dark:text-brand-green font-medium hover:underline text-base md:text-lg">@unitscalers</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-5 sm:p-8">
+        <form class="space-y-5 sm:space-y-6" onsubmit="event.preventDefault();">
+          <div>
+            <label for="name" class="block font-mono text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2">Name</label>
+            <input type="text" id="name" name="name" class="w-full border border-gray-300 dark:border-gray-700 p-3 bg-white dark:bg-black text-brand-dark dark:text-gray-100 focus:outline-none focus:border-brand-dark dark:focus:border-brand-green transition-colors" required>
+          </div>
+          
+          <div>
+            <label for="business_name" class="block font-mono text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2">Business Name</label>
+            <input type="text" id="business_name" name="business_name" class="w-full border border-gray-300 dark:border-gray-700 p-3 bg-white dark:bg-black text-brand-dark dark:text-gray-100 focus:outline-none focus:border-brand-dark dark:focus:border-brand-green transition-colors" required>
+          </div>
+          
+          <div>
+            <label for="business_type" class="block font-mono text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2">Business Type</label>
+            <select id="business_type" name="business_type" class="w-full border border-gray-300 dark:border-gray-700 p-3 bg-white dark:bg-black text-brand-dark dark:text-gray-100 focus:outline-none focus:border-brand-dark dark:focus:border-brand-green transition-colors rounded-none appearance-none" required>
+              <option value="" disabled selected>Select an option...</option>
+              <option value="d2c">D2C / Online brand</option>
+              <option value="local">Local clinic, store, or spa</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="url" class="block font-mono text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2">Website / Instagram URL</label>
+            <input type="text" id="url" name="url" class="w-full border border-gray-300 dark:border-gray-700 p-3 bg-white dark:bg-black text-brand-dark dark:text-gray-100 focus:outline-none focus:border-brand-dark dark:focus:border-brand-green transition-colors">
+          </div>
+          
+          <div>
+            <label for="goals" class="block font-mono text-xs uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2">What are you hoping to grow?</label>
+            <textarea id="goals" name="goals" rows="4" class="w-full border border-gray-300 dark:border-gray-700 p-3 bg-white dark:bg-black text-brand-dark dark:text-gray-100 focus:outline-none focus:border-brand-dark dark:focus:border-brand-green transition-colors" required></textarea>
+          </div>
+          
+          <Button class="w-full">Send & Book a Free Audit</Button>
+          <p class="text-xs text-gray-500 dark:text-gray-500 text-center mt-4">We reply within 24 business hours.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

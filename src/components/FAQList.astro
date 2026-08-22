@@ -1,0 +1,58 @@
+---
+const faqs = [
+  {
+    q: "How is a skincare marketing agency different from a regular digital marketing agency?",
+    a: "A specialist skincare agency builds campaigns around ingredient-conscious, proof-seeking buyers and retention-first growth — because skincare customers research before they trust, and stay loyal through routines rather than one-off purchases. A generalist agency applies the same playbook to every industry, which misses that behavior entirely."
+  },
+  {
+    q: "How long does skincare SEO take to show results?",
+    a: "Most skincare brands see initial ranking movement in 8–12 weeks, with meaningful organic traffic growth by 3–6 months. Paid ads and social campaigns are used alongside SEO to deliver faster, earlier results while organic growth compounds."
+  },
+  {
+    q: "Which platform works best — Google Ads, Meta Ads, or Amazon/Nykaa — for a skincare brand?",
+    a: "It depends on intent: Google Ads captures buyers already searching for a specific product (\"best sunscreen for oily skin\"), Meta Ads builds discovery and story before that search happens, and marketplaces like Amazon and Nykaa build trust through reviews and visibility where beauty buyers already compare. Most skincare brands need a mix, not just one."
+  },
+  {
+    q: "What ROAS or CAC should a skincare brand expect?",
+    a: "This varies by product price point and category, so we don't quote a blanket number — we set targets during the audit based on your specific margins, average order value, and current funnel data, and report against them transparently every reporting cycle."
+  },
+  {
+    q: "Do you help with skincare claims compliance and legally-safe copy?",
+    a: "Yes. Skincare and wellness product claims are subject to advertising and labeling regulations, so all copy we write is checked against factual, compliant claims — protecting your brand from legal risk while still building buyer trust."
+  },
+  {
+    q: "Can you also handle influencer or dermatologist collaborations?",
+    a: "Yes. We identify and vet influencers and dermatologist partners for genuine brand fit, not just follower count, and measure both reach and actual sales from every collaboration."
+  },
+  {
+    q: "What's the difference between performance marketing and SEO for a skincare brand?",
+    a: "Performance marketing (Google Ads, Meta Ads) buys visibility now and is measured in CAC and ROAS; SEO earns visibility over time through content and site structure and is measured in organic rankings and traffic. Skincare brands generally need both — paid for immediate sales, organic for compounding, lower-cost growth."
+  },
+  {
+    q: "What is AEO/GEO, and why does it matter for a skincare brand?",
+    a: "AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) are the practice of getting your brand cited inside AI-generated answers on tools like Google AI Overviews, ChatGPT, and Perplexity — increasingly where skincare buyers ask \"what's the best serum for X\" before they ever open Google. We treat getting cited inside those answers as a core deliverable, not an add-on nobody else offers yet."
+  },
+  {
+    q: "Do you work with local skincare clinics, stores, and spas, or only online D2C brands?",
+    a: "Both. We work with D2C skincare and wellness brands scaling online, and with local clinics, stores, and spas that are found through Google Maps and local search — each with a dedicated approach suited to how their customers actually find them."
+  }
+];
+---
+
+<div class="divide-y divide-gray-200 dark:divide-gray-800">
+  {faqs.map((faq) => (
+    <details class="group py-6 first:pt-0 last:pb-0 cursor-pointer">
+      <summary class="flex justify-between items-center font-bold font-sans text-xl tracking-tight text-brand-dark dark:text-white list-none [&::-webkit-details-marker]:hidden hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+        <span class="pr-6">{faq.q}</span>
+        <span class="transition-transform duration-200 group-open:rotate-180 flex-shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </summary>
+      <p class="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed pr-8">
+        {faq.a}
+      </p>
+    </details>
+  ))}
+</div>

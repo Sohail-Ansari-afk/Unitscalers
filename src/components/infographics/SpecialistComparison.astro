@@ -1,0 +1,62 @@
+---
+/**
+ * Specialist vs Generalist comparison — inline SVG infographic
+ * Used on: Home page
+ */
+const rows = [
+  { category: "Skincare Buyer Psychology", specialist: true, generalist: false },
+  { category: "Ingredient Compliance Copy", specialist: true, generalist: false },
+  { category: "Retention Funnel Design", specialist: true, generalist: false },
+  { category: "Google Ads Setup", specialist: true, generalist: true },
+  { category: "Meta Ads Setup", specialist: true, generalist: true },
+  { category: "AEO / AI Citation", specialist: true, generalist: false },
+  { category: "Category-specific KPIs", specialist: true, generalist: false },
+];
+---
+
+<div class="w-full max-w-2xl mx-auto">
+  <div class="font-mono text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6 text-center">Specialist vs Generalist</div>
+  
+  <!-- Header Row -->
+  <div class="grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_100px_100px] gap-0 border border-gray-200 dark:border-gray-800">
+    <div class="p-3 sm:p-4 bg-gray-50 dark:bg-gray-900 font-mono text-xs uppercase tracking-widest text-gray-500">Capability</div>
+    <div class="p-3 sm:p-4 bg-brand-dark text-white font-mono text-xs uppercase tracking-widest text-center">Us</div>
+    <div class="p-3 sm:p-4 bg-gray-200 dark:bg-gray-700 font-mono text-xs uppercase tracking-widest text-center text-gray-600 dark:text-gray-300">Them</div>
+  </div>
+  
+  {rows.map((row, i) => (
+    <div class={`grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_100px_100px] gap-0 border-x border-b border-gray-200 dark:border-gray-800 ${i % 2 === 0 ? 'bg-white dark:bg-black' : 'bg-gray-50 dark:bg-gray-900/50'}`}>
+      <div class="p-3 sm:p-4 text-sm font-medium text-brand-dark dark:text-gray-300">{row.category}</div>
+      <div class="p-3 sm:p-4 flex items-center justify-center">
+        {row.specialist ? (
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="10" fill="#2d9470"/>
+            <path d="M6 10l3 3 5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="10" fill="#e5e7eb"/>
+            <path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        )}
+      </div>
+      <div class="p-3 sm:p-4 flex items-center justify-center">
+        {row.generalist ? (
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="10" fill="#d1e8e2"/>
+            <path d="M6 10l3 3 5-6" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="10" fill="#e5e7eb"/>
+            <path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        )}
+      </div>
+    </div>
+  ))}
+  
+  <p class="font-mono text-[10px] text-gray-400 dark:text-gray-600 text-center mt-4 uppercase tracking-wider">
+    5 out of 7 capabilities require skincare-specific expertise
+  </p>
+</div>

@@ -1,11 +1,250 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import IngredientLabel from '../components/IngredientLabel.astro';
+import FAQList from '../components/FAQList.astro';
+import BuyerFunnel from '../components/infographics/BuyerFunnel.astro';
+import SpecialistComparison from '../components/infographics/SpecialistComparison.astro';
+import StatDials from '../components/infographics/StatDials.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const heroStats = [
+  { label: "Focus", value: "1", subtext: "Category: Skincare & Wellness" },
+  { label: "Services", value: "5", subtext: "Ads, SEO, AEO, Dev, GBP" },
+  { label: "Approach", value: "100%", subtext: "Transparent reporting" },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Unitscalers",
+  "description": "Specialist digital marketing agency for D2C skincare and wellness brands, and local skincare clinics, stores, and spas. Services include performance marketing, website design and development, SEO, and AEO/GEO.",
+  "areaServed": ["India", "Global"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Marketing - Google Ads & Meta Ads" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AEO/GEO - Answer Engine Optimization" } }
+  ]
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="Unitscalers | Marketing Agency for Skincare & Wellness Brands"
+  description="Specialist growth marketing for D2C skincare brands and local skincare businesses. Ads, SEO, AEO, and dev-built websites — one team, one niche."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight text-brand-dark dark:text-white">
+          Growth Marketing for Skincare & Wellness Brands — <br/>
+          <span class="text-gray-400 dark:text-gray-500">Online and On the Map</span>
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
+          A specialist beats a generalist. Unitscalers works exclusively with skincare and wellness businesses — whether you're a D2C brand scaling on Shopify, or a clinic, spa, or store that customers find on Google Maps. No split attention across industries we don't understand. Just skincare, done properly.
+        </p>
+        <Button href="/contact-us" variant="primary">Book a Free Audit</Button>
+      </div>
+      
+      <!-- Colorful Infographic Hero Card -->
+      <div class="w-full max-w-md mx-auto md:mx-0 md:ml-auto">
+        <!-- Services Radial Grid -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-[#2d9470] p-5 flex flex-col justify-between min-h-[120px]">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-white/70">Service 01</div>
+              <div class="font-bold text-white text-sm mt-1">Performance Marketing</div>
+            </div>
+          </div>
+          <div class="bg-[#5aac96] p-5 flex flex-col justify-between min-h-[120px]">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-white/70">Service 02</div>
+              <div class="font-bold text-white text-sm mt-1">SEO & Content</div>
+            </div>
+          </div>
+          <div class="bg-[#8ec5b5] p-5 flex flex-col justify-between min-h-[120px]">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.5"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-brand-dark/60">Service 03</div>
+              <div class="font-bold text-brand-dark text-sm mt-1">Website Dev</div>
+            </div>
+          </div>
+          <div class="bg-[#d1e8e2] p-5 flex flex-col justify-between min-h-[120px]">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+            <div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-brand-dark/60">Service 04</div>
+              <div class="font-bold text-brand-dark text-sm mt-1">AEO / GEO</div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom bar -->
+        <div class="bg-brand-dark dark:bg-gray-800 p-4 flex items-center justify-between">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-gray-400">Category Focus</div>
+          <div class="font-mono text-sm font-bold text-brand-green">Skincare & Wellness Only</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Kinds of Business -->
+  <section class="py-24 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12 text-center text-brand-dark dark:text-white">Two Kinds of Skincare Business.<br/>One Specialist Agency.</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card title="For Digital-First D2C Brands">
+          <p class="mb-6">You sell online. Your growth depends on ROAS, CAC, retention, and being found on Google and inside AI answers before your competitors are.</p>
+          <a href="/digital-brands" class="font-mono text-xs uppercase tracking-widest text-brand-dark dark:text-white hover:underline flex items-center gap-2">
+            See how we grow D2C brands &rarr;
+          </a>
+        </Card>
+        
+        <Card title="For Local Clinics, Stores & Spas">
+          <p class="mb-6">Your customers search "near me." Your growth depends on your Google Business Profile, reviews, and showing up first on the map.</p>
+          <a href="/local-brands" class="font-mono text-xs uppercase tracking-widest text-brand-dark dark:text-white hover:underline flex items-center gap-2">
+            See how we grow local businesses &rarr;
+          </a>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Specialist Beats Generalist -->
+  <section class="py-24 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-center text-brand-dark dark:text-white">Why a Specialist Agency Beats a Generalist One</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-center max-w-3xl mx-auto mb-16">
+        Skincare buyers behave differently than buyers in any other category. They read ingredient lists. They compare before-and-afters. They don't trust claims without proof. A generalist agency treats your skincare brand like any other product — we don't, because we only work in this category.
+      </p>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <BuyerFunnel />
+        <SpecialistComparison />
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="py-24 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-brand-dark dark:text-white">What We Do</h2>
+          <Button href="#faq" variant="outline">Read our FAQs</Button>
+        </div>
+        <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div class="border-l-2 border-brand-dark dark:border-gray-700 pl-6">
+            <h3 class="font-mono font-bold text-sm uppercase tracking-widest mb-3 text-brand-dark dark:text-white">1. Performance Marketing</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Google Ads & Meta Ads built around skincare buying psychology, not generic ecommerce templates.</p>
+          </div>
+          <div class="border-l-2 border-brand-dark dark:border-gray-700 pl-6">
+            <h3 class="font-mono font-bold text-sm uppercase tracking-widest mb-3 text-brand-dark dark:text-white">2. Website Design & Dev</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Developer-built Shopify/WooCommerce sites, not templated agency builds.</p>
+          </div>
+          <div class="border-l-2 border-brand-dark dark:border-gray-700 pl-6">
+            <h3 class="font-mono font-bold text-sm uppercase tracking-widest mb-3 text-brand-dark dark:text-white">3. SEO</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Ranking for the searches your future customers are already making.</p>
+          </div>
+          <div class="border-l-2 border-brand-dark dark:border-gray-700 pl-6">
+            <h3 class="font-mono font-bold text-sm uppercase tracking-widest mb-3 text-brand-dark dark:text-white">4. AEO/GEO</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Getting your brand cited inside Google AI Overviews, ChatGPT, and Perplexity — treated as a core service, not an afterthought.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="py-24 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-16 text-center text-brand-dark dark:text-white">Our Process</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        <!-- Step 1 -->
+        <div class="relative bg-[#2d9470] p-6 md:p-8 min-h-[200px] flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-5xl font-bold text-white/20">01</div>
+            <svg class="mt-2" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-bold text-white text-lg mb-1">Audit</h3>
+            <p class="text-white/70 text-sm">We dig into what you have. Ads, site, SEO, Google profile.</p>
+          </div>
+          <!-- Arrow -->
+          <div class="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#2d9470"><path d="M0 0l12 12L0 24z"/></svg>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="relative bg-[#5aac96] p-6 md:p-8 min-h-[200px] flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-5xl font-bold text-white/20">02</div>
+            <svg class="mt-2" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-bold text-white text-lg mb-1">Strategy</h3>
+            <p class="text-white/70 text-sm">Custom roadmap based on your numbers, not a template.</p>
+          </div>
+          <div class="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#5aac96"><path d="M0 0l12 12L0 24z"/></svg>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="relative bg-[#8ec5b5] p-6 md:p-8 min-h-[200px] flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-5xl font-bold text-brand-dark/10">03</div>
+            <svg class="mt-2" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.5"><path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-bold text-brand-dark text-lg mb-1">Build & Launch</h3>
+            <p class="text-brand-dark/60 text-sm">Campaigns, site changes, and content go live together.</p>
+          </div>
+          <div class="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#8ec5b5"><path d="M0 0l12 12L0 24z"/></svg>
+          </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="bg-[#d1e8e2] p-6 md:p-8 min-h-[200px] flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-5xl font-bold text-brand-dark/10">04</div>
+            <svg class="mt-2" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.5"><path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M21.015 4.356v4.992"/></svg>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-bold text-brand-dark text-lg mb-1">Optimize & Report</h3>
+            <p class="text-brand-dark/60 text-sm">Transparent numbers. Iterate on what's working.</p>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-12">
+        We start by auditing what's already there — your ads, your site, your Google Business Profile, your search presence. Then we build a roadmap specific to your business type before touching a single campaign.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Home) -->
+  <section id="faq" class="py-24 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-6 md:px-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12 text-center text-brand-dark dark:text-white">Frequently Asked Questions</h2>
+      <FAQList />
+    </div>
+  </section>
+
+  <!-- Track Record -->
+  <section class="py-24 bg-brand-dark dark:bg-gray-900 text-white border-t border-brand-dark dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Real Work, Honest Track Record</h2>
+      <p class="text-lg text-gray-400 leading-relaxed mb-12">
+        Before Unitscalers, our founder delivered SEO audits, native-language website copy, and brand-consistent visual systems for <strong>Taco Loco Berlin</strong>, <strong>Tocoloco</strong>, and <strong>Burrito Madre</strong> — real client work, honestly labeled as prior experience, not skincare-specific. Same method, new focus.
+      </p>
+      <Button href="/contact-us" variant="secondary">Book a Free Audit</Button>
+    </div>
+  </section>
 </Layout>

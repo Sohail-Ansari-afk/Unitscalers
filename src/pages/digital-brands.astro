@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import GrowthStack from '../components/infographics/GrowthStack.astro';
+import StatDials from '../components/infographics/StatDials.astro';
+
+const d2cStats = [
+  { label: "SEO Timeline", value: "8–12w", subtext: "Initial ranking movement" },
+  { label: "Organic Growth", value: "3–6m", subtext: "Meaningful traffic increase" },
+  { label: "Channels", value: "4+", subtext: "Integrated growth stack" },
+  { label: "Reporting", value: "Bi-weekly", subtext: "Full transparency" },
+];
+---
+
+<Layout 
+  title="D2C Skincare Marketing Agency India | Unitscalers"
+  description="Performance marketing, SEO, AEO, and dev-built websites for D2C skincare and wellness brands. Built for early-stage and scaling founders — not just funded giants."
+>
+  <section class="border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight text-brand-dark dark:text-white">
+          Marketing for D2C Skincare Brands Ready to Scale Past DIY
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
+          If you're running your own ads, guessing at SEO, or waiting on a freelancer who's stretched across ten industries — this is the ceiling. Unitscalers is built for D2C skincare and wellness founders who need a specialist growth partner, not another vendor.
+        </p>
+        <Button href="/contact-us" variant="primary">Get a Free Growth Audit</Button>
+      </div>
+      
+      <!-- Colorful D2C Dashboard Infographic -->
+      <div class="w-full max-w-md mx-auto md:mx-0 md:ml-auto">
+        <!-- Header -->
+        <div class="bg-brand-dark dark:bg-gray-800 px-5 py-4 flex items-center justify-between">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-gray-400">D2C Growth Dashboard</div>
+          <div class="flex gap-1.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-[#2d9470]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-[#5aac96]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-[#d1e8e2]"></div>
+          </div>
+        </div>
+        
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-2 gap-0 border-x border-gray-200 dark:border-gray-800">
+          <div class="p-5 border-b border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">ROAS Target</div>
+            <div class="text-2xl font-bold text-[#2d9470]">4.2x</div>
+            <div class="mt-2 h-1.5 bg-gray-100 dark:bg-gray-800 overflow-hidden"><div class="h-full bg-[#2d9470]" style="width:84%"></div></div>
+          </div>
+          <div class="p-5 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">CAC Reduction</div>
+            <div class="text-2xl font-bold text-[#5aac96]">-31%</div>
+            <div class="mt-2 h-1.5 bg-gray-100 dark:bg-gray-800 overflow-hidden"><div class="h-full bg-[#5aac96]" style="width:69%"></div></div>
+          </div>
+          <div class="p-5 border-b border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">Organic Growth</div>
+            <div class="text-2xl font-bold text-[#8ec5b5]">+68%</div>
+            <div class="mt-2 h-1.5 bg-gray-100 dark:bg-gray-800 overflow-hidden"><div class="h-full bg-[#8ec5b5]" style="width:68%"></div></div>
+          </div>
+          <div class="p-5 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="font-mono text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">AI Citations</div>
+            <div class="text-2xl font-bold text-brand-dark dark:text-brand-green">12+</div>
+            <div class="mt-2 h-1.5 bg-gray-100 dark:bg-gray-800 overflow-hidden"><div class="h-full bg-[#d1e8e2]" style="width:48%"></div></div>
+          </div>
+        </div>
+        
+        <!-- Bottom -->
+        <div class="bg-[#2d9470] px-5 py-3 flex items-center justify-between">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-white/70">Platform</div>
+          <div class="font-mono text-xs font-bold text-white">Shopify · WooCommerce</div>
+        </div>
+        
+        <p class="font-mono text-[10px] text-gray-400 dark:text-gray-600 text-center mt-3 uppercase tracking-wider">
+          Illustrative targets — your audit sets real numbers
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8 text-brand-dark dark:text-white">Who This Is For</h2>
+          <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-dark dark:text-brand-green font-mono font-bold mt-1">01.</span>
+              <span>Pre-seed/seed funded founders whose funding went to product, not a marketing hire</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-dark dark:text-brand-green font-mono font-bold mt-1">02.</span>
+              <span>Bootstrapped indie founders scaling past 1–3 SKUs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-dark dark:text-brand-green font-mono font-bold mt-1">03.</span>
+              <span>Brands stuck at ₹10L–₹1Cr/month who've outgrown DIY but aren't ready for a big-agency retainer</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-dark dark:text-brand-green font-mono font-bold mt-1">04.</span>
+              <span>Dermat-backed or science-first brands that need compliance-safe copy alongside growth</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8 text-brand-dark dark:text-white">What Growth Actually Looks Like</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+            Skincare buyers research every ingredient before buying. That means your funnel needs more than reach — it needs proof, credibility, and retention loops that turn a first purchase into a routine. 
+          </p>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+            We build campaigns around that reality, not generic ecommerce playbooks.
+          </p>
+          <GrowthStack />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-center text-brand-dark dark:text-white">Our Services for D2C Brands</h2>
+      
+      <div class="mb-12">
+        <StatDials stats={d2cStats} />
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card title="Performance Marketing">
+          <p>Google captures buyers who already know what they want — "best niacinamide serum," "sunscreen for oily skin." Meta builds the discovery and story before that search happens. We run both as one funnel, not two disconnected channels.</p>
+        </Card>
+        
+        <Card title="Website Design & Development">
+          <p>Shopify and WooCommerce sites built by a developer, not assembled from a theme. Fast, conversion-structured, and built to support the SEO and ad campaigns running on top of it.</p>
+        </Card>
+        
+        <Card title="SEO">
+          <p>We build around what Google's own Search Central documentation confirms: there's no special trick to ranking or appearing in AI Overviews — clarity, structure, and real expertise (E-E-A-T) win. That means direct-answer content, credentialed authorship, and technically clean sites.</p>
+        </Card>
+        
+        <Card title="AEO/GEO — Answer Engine Optimization">
+          <p>Your future customers are asking ChatGPT and Perplexity "what's the best serum for X" before they ever open Google. We treat getting cited inside those answers as a core deliverable, not an add-on nobody else offers yet.</p>
+        </Card>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a href="/" class="font-mono text-sm uppercase tracking-widest text-brand-dark dark:text-gray-300 hover:underline flex items-center justify-center gap-2">
+          See our full process on the homepage &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-brand-dark dark:bg-gray-900 text-white">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-12">How We're Different</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-12">
+        <div class="border-t border-gray-700 pt-4">
+          <div class="font-mono text-xs uppercase tracking-widest text-brand-green mb-2">01. Focus</div>
+          <p class="font-medium">Only skincare and wellness. No split attention.</p>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+          <div class="font-mono text-xs uppercase tracking-widest text-brand-green mb-2">02. Tech</div>
+          <p class="font-medium">Developer-built websites, not templated agency builds.</p>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+          <div class="font-mono text-xs uppercase tracking-widest text-brand-green mb-2">03. Future</div>
+          <p class="font-medium">AI search treated as core, not a bolt-on service.</p>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+          <div class="font-mono text-xs uppercase tracking-widest text-brand-green mb-2">04. Truth</div>
+          <p class="font-medium">Transparent reporting on CAC, ROAS, and repeat rate.</p>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+          <div class="font-mono text-xs uppercase tracking-widest text-brand-green mb-2">05. Unity</div>
+          <p class="font-medium">One team, not three vendors across ads, SEO, and dev.</p>
+        </div>
+        <div class="border-t border-gray-700 pt-4">
+          <div class="font-mono text-xs uppercase tracking-widest text-brand-green mb-2">06. Performance</div>
+          <p class="font-medium">SEM and Performance marketing specifically designed for skincare and wellness brands.</p>
+        </div>
+      </div>
+      
+      <Button href="/contact-us" variant="secondary">Book a Free Strategy Call</Button>
+    </div>
+  </section>
+</Layout>

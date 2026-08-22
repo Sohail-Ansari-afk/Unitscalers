@@ -1,0 +1,36 @@
+---
+/**
+ * Skincare Buyer Journey Funnel — inline SVG infographic
+ * Shows: Awareness → Research → Trust → Purchase → Routine
+ * Used on: Home page ("Why Specialist" section) and Digital Brands page
+ */
+const steps = [
+  { label: "Awareness", pct: 100, color: "#d1e8e2" },
+  { label: "Research", pct: 82, color: "#b8d8cf" },
+  { label: "Trust", pct: 58, color: "#8ec5b5" },
+  { label: "Purchase", pct: 35, color: "#5aac96" },
+  { label: "Routine", pct: 22, color: "#2d9470" },
+];
+---
+
+<div class="w-full max-w-lg mx-auto">
+  <div class="font-mono text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6 text-center">Skincare Buyer Journey</div>
+  <div class="space-y-3">
+    {steps.map((step) => (
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs w-20 text-right text-gray-500 dark:text-gray-400 flex-shrink-0">{step.label}</span>
+        <div class="flex-1 h-8 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+          <div
+            class="h-full flex items-center justify-end pr-3 transition-all duration-500"
+            style={`width: ${step.pct}%; background-color: ${step.color};`}
+          >
+            <span class="font-mono text-xs font-bold text-brand-dark">{step.pct}%</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  <p class="font-mono text-[10px] text-gray-400 dark:text-gray-600 text-center mt-4 uppercase tracking-wider">
+    Skincare buyers drop off at trust — not awareness. A specialist agency fixes that.
+  </p>
+</div>

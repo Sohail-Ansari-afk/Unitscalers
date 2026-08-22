@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'Geist', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  --color-brand-green: #d1e8e2; /* clinical-botanical subtle accent */
+  --color-brand-dark: #1a1a1a;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply text-brand-dark bg-white font-sans antialiased dark:bg-black dark:text-gray-100;
+  }
+}

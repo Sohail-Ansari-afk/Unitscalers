@@ -1,0 +1,67 @@
+---
+/**
+ * Local SEO Audit Checklist — visual infographic
+ * Used on: Local Brands page
+ */
+const items = [
+  { label: "GBP Category Match", status: "critical", icon: "⚠" },
+  { label: "Photos (20+ quality)", status: "warning", icon: "◐" },
+  { label: "Review Count vs Competitors", status: "critical", icon: "⚠" },
+  { label: "NAP Consistency", status: "ok", icon: "✓" },
+  { label: "Service Area Pages", status: "missing", icon: "✕" },
+  { label: "Schema Markup", status: "missing", icon: "✕" },
+  { label: "Response to Reviews", status: "warning", icon: "◐" },
+  { label: "Operating Hours Accuracy", status: "ok", icon: "✓" },
+];
+
+const statusColors: Record<string, { bg: string; text: string; label: string }> = {
+  ok: { bg: "bg-green-100 dark:bg-green-900/30", text: "text-green-700 dark:text-green-400", label: "Good" },
+  warning: { bg: "bg-yellow-100 dark:bg-yellow-900/30", text: "text-yellow-700 dark:text-yellow-400", label: "Needs Work" },
+  critical: { bg: "bg-red-100 dark:bg-red-900/30", text: "text-red-700 dark:text-red-400", label: "Critical" },
+  missing: { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-500 dark:text-gray-400", label: "Missing" },
+};
+---
+
+<div class="w-full max-w-lg mx-auto">
+  <div class="font-mono text-xs uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2 text-center">Sample Audit Output</div>
+  <div class="font-mono text-[10px] text-gray-400 dark:text-gray-600 text-center mb-6">What a typical local skincare business looks like before we start</div>
+  
+  <div class="border border-gray-200 dark:border-gray-800 divide-y divide-gray-200 dark:divide-gray-800">
+    {items.map((item) => {
+      const s = statusColors[item.status];
+      return (
+        <div class="flex items-center justify-between p-3 sm:p-4">
+          <div class="flex items-center gap-3">
+            <span class={`w-7 h-7 flex items-center justify-center text-sm font-bold ${s.bg} ${s.text} flex-shrink-0`}>
+              {item.icon}
+            </span>
+            <span class="text-sm font-medium text-brand-dark dark:text-gray-200">{item.label}</span>
+          </div>
+          <span class={`font-mono text-[10px] uppercase tracking-wider px-2 py-1 ${s.bg} ${s.text}`}>
+            {s.label}
+          </span>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Score Summary -->
+  <div class="mt-4 grid grid-cols-4 gap-2 text-center">
+    <div class="p-2 bg-green-100 dark:bg-green-900/30">
+      <div class="font-mono text-lg font-bold text-green-700 dark:text-green-400">2</div>
+      <div class="font-mono text-[9px] uppercase tracking-wider text-green-600 dark:text-green-500">Good</div>
+    </div>
+    <div class="p-2 bg-yellow-100 dark:bg-yellow-900/30">
+      <div class="font-mono text-lg font-bold text-yellow-700 dark:text-yellow-400">2</div>
+      <div class="font-mono text-[9px] uppercase tracking-wider text-yellow-600 dark:text-yellow-500">Needs Work</div>
+    </div>
+    <div class="p-2 bg-red-100 dark:bg-red-900/30">
+      <div class="font-mono text-lg font-bold text-red-700 dark:text-red-400">2</div>
+      <div class="font-mono text-[9px] uppercase tracking-wider text-red-600 dark:text-red-500">Critical</div>
+    </div>
+    <div class="p-2 bg-gray-100 dark:bg-gray-800">
+      <div class="font-mono text-lg font-bold text-gray-500 dark:text-gray-400">2</div>
+      <div class="font-mono text-[9px] uppercase tracking-wider text-gray-400 dark:text-gray-500">Missing</div>
+    </div>
+  </div>
+</div>
